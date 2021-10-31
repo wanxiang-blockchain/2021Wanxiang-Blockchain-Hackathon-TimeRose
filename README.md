@@ -179,7 +179,7 @@ IPFS作为内容寻址存储网络，业内已经非常熟悉。
 [demo3](http://52.14.211.248:1003/)   
 
 #### demo rust code
-
+计算第n个斐波那契数字：
 ```rust
 #[no_mangle]
 pub extern fn fx(n: i32) -> i64 {
@@ -201,6 +201,9 @@ pub extern fn fx(n: i32) -> i64 {
 	return sum
 }
 ```
+
+校验结果：
+![image](./images/Fibanacci.png)
 
 ## 4 关于凯云实验室
 
