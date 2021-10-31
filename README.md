@@ -5,6 +5,10 @@
 # TimeRose: 基于IPFS的计算网格编排框架
 ## Computing mesh orchestrator over IPFS
 
+
+[playground(demo)](http://52.14.211.248:1001/)
+
+
 # 1 项目背景
 
 ## 1.1 推动我国数字经济健康发展
@@ -23,12 +27,12 @@
 ## 2.1 元宇宙解剖
 元宇宙的构建以资产为核心，目的是链接数字世界和物理世界。元宇宙的基础设施和原语覆盖Web3正在推进的各项技术变革。
 
-![metaverse](./images/mv1.png)
+![metaverse](./images/metaverse1.png)
 ## 2.2 元宇宙操作系统
 
 围绕元宇宙，需要构建的是一个基本的元宇宙操作系统。
 
-![metaverse](./images/mv2.png)
+![metaverse](./images/metaverse2.png)
 
 ## 2.3 基于IPFS的数据宇宙
 
@@ -164,8 +168,39 @@ IPFS作为内容寻址存储网络，业内已经非常熟悉。
 客户端。向Scheduler请求调度最近计算节点，然后和计算节点通过PubSub提交任务并得到结果
 
 #### demo 架构
-![image](./images/img.png)
+![image](./images/demo.jpg)
 
+#### demo instances deployment
+![image](./images/computing_mesh.jpg)
+
+#### demo link
+[demo1](http://52.14.211.248:1001/)  
+[demo2](http://52.14.211.248:1002/)   
+[demo3](http://52.14.211.248:1003/)   
+
+#### demo rust code
+
+```rust
+#[no_mangle]
+pub extern fn fx(n: i32) -> i64 {
+	if n < 0 {
+		return -1;
+	} else if n == 0 {
+		return -1;
+	} else if n == 1 {
+		return 1;
+	}
+	let mut sum = 0;
+	let mut last = 0;
+	let mut curr = 1;
+	for _i in 1..n {
+		sum = last + curr;
+		last = curr;
+		curr = sum;
+	}
+	return sum
+}
+```
 
 ## 4 关于凯云实验室
 
@@ -176,11 +211,8 @@ IPFS作为内容寻址存储网络，业内已经非常熟悉。
 
 一些最激动人心的研究能够催生我们今天还无法想象的新产品，甚至新业务。
 
-联系我们：
-
-Repo: [GitHub](https://github.com/kenlabs)
-
-WebSite: [kencloud.com](https://kencloud.com/)
-
+## 联系我们：  
+Code Repo: [GitHub](https://github.com/kenlabs)  
+WebSite: [kencloud.com](https://kencloud.com/)   
 Mail: info@kencloud.com
 
